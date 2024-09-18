@@ -2,7 +2,7 @@ from breeze_connect import BreezeConnect
 breeze = BreezeConnect(api_key="6=356P9E53mG196KDZ133R1#9L92r9pd")
 import urllib
 breeze.generate_session(api_secret="6tM2Y08E48l3yd`4W346QL8m52g7992h",
-                        session_token="47257572")
+                        session_token="47259099")
 
 
 import numpy as np
