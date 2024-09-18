@@ -12,8 +12,8 @@ import time
 from datetime import date, datetime, timedelta, time as t
 import csv, re, time, math
 
-time_1 = t(9,15)
-time_2 = t(15,30)
+time_1 = t(3, 45)  # 9:17 AM IST -> 3:47 AM UTC
+time_2 = t(9, 50)  # 3:01 PM IST -> 9:31 AM UTC
 
 expiry = '2024-09-19'
 
