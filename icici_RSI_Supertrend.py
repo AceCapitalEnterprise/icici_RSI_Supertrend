@@ -1,8 +1,8 @@
 from breeze_connect import BreezeConnect
-breeze = BreezeConnect(api_key="6=356P9E53mG196KDZ133R1#9L92r9pd")
 import urllib
-breeze.generate_session(api_secret="6tM2Y08E48l3yd`4W346QL8m52g7992h",
-                        session_token="47259099")
+breeze = BreezeConnect(api_key="77%U3I71634^099gN232777%316Q~v4=")
+breeze.generate_session(api_secret="9331K77(I8_52JG2K73$5438q95772j@",
+                        session_token="47309058")
 
 
 import numpy as np
