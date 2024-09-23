@@ -34,12 +34,17 @@ while True:
         today = today.strftime('%Y-%m-%d')
         
         if order == 0 and now.second == 0 :
-            nifty_spot = breeze.get_quotes(stock_code="NIFTY",
+            for j in range(0, 5):
+                try:
+                    nifty_spot = breeze.get_quotes(stock_code="NIFTY",
                                                    exchange_code="NSE",
                                                    expiry_date=f"{today}T06:00:00.000Z",
                                                    product_type="cash",
                                                    right="others",
                                                    strike_price="0")
+                    break
+                except:
+                    pass
             nifty_spot = nifty_spot['Success']
             nifty_spot = pd.DataFrame(nifty_spot)
             nifty_spot = nifty_spot['ltp'][0]
