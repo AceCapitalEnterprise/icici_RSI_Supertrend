@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Sep 23 14:13:10 2024
+
+@author: aceca
+"""
+
 from breeze_connect import BreezeConnect
 import urllib
 breeze = BreezeConnect(api_key="77%U3I71634^099gN232777%316Q~v4=")
@@ -184,7 +191,7 @@ while True:
         if order2 == 0 and now.second == 0 :
             for j in range(0, 5):
                 try:
-                  nifty_spot = breeze.get_quotes(stock_code="NIFTY",
+                    nifty_spot = breeze.get_quotes(stock_code="NIFTY",
                                                    exchange_code="NSE",
                                                    expiry_date=f"{today}T06:00:00.000Z",
                                                    product_type="cash",
