@@ -82,12 +82,17 @@ while True:
                 entry_time = datetime.now().strftime('%H:%M:%S')
                 order = 1
                 initial_point = 0
-                leg = breeze.get_option_chain_quotes(stock_code="NIFTY",
+                for j in range(0, 5):
+                    try:
+                        leg = breeze.get_option_chain_quotes(stock_code="NIFTY",
                                                         exchange_code="NFO",
                                                         product_type="options",
                                                         expiry_date=f'{expiry}T06:00:00.000Z',
                                                         right="call",
                                                         strike_price=ce_otm)
+                        break
+                    except:
+                        pass
                 leg = leg['Success']
                 leg = pd.DataFrame(leg)
                 buy_price = float(leg['ltp'][0]) 
@@ -136,6 +141,7 @@ while True:
                                                         expiry_date=f'{expiry}T06:00:00.000Z',
                                                         right="call",
                                                         strike_price=ce_otm)
+          
             leg = leg['Success']
             leg = pd.DataFrame(leg)
             leg = float(leg['ltp'][0])
