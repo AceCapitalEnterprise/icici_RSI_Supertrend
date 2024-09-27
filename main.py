@@ -9,7 +9,7 @@ from breeze_connect import BreezeConnect
 import urllib
 breeze = BreezeConnect(api_key="77%U3I71634^099gN232777%316Q~v4=")
 breeze.generate_session(api_secret="9331K77(I8_52JG2K73$5438q95772j@",
-                        session_token="47596527")
+                        session_token="47648339")
 
 
 import numpy as np
@@ -22,7 +22,7 @@ import csv, re, time, math
 time_1 = t(3, 45)  # 9:17 AM IST -> 3:47 AM UTC
 time_2 = t(9, 50)  # 3:01 PM IST -> 9:31 AM UTC
 
-expiry = '2024-09-26'
+expiry = '2024-10-31'
 
 order = 0
 order2 = 0
