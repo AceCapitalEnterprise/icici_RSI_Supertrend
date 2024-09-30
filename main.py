@@ -1,15 +1,8 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Sep 23 14:13:10 2024
-
-@author: aceca
-"""
-
 from breeze_connect import BreezeConnect
 import urllib
 breeze = BreezeConnect(api_key="77%U3I71634^099gN232777%316Q~v4=")
 breeze.generate_session(api_secret="9331K77(I8_52JG2K73$5438q95772j@",
-                        session_token="47648339")
+                        session_token="47717769")
 
 
 import numpy as np
@@ -243,12 +236,17 @@ while True:
                 entry_time = datetime.now().strftime('%H:%M:%S')
                 order2 = 1
                 initial_point2 = 0
-                leg = breeze.get_option_chain_quotes(stock_code="NIFTY",
+                for j in range(0, 5):
+                    try:
+                        leg = breeze.get_option_chain_quotes(stock_code="NIFTY",
                                                         exchange_code="NFO",
                                                         product_type="options",
                                                         expiry_date=f'{expiry}T06:00:00.000Z',
                                                         right="put",
                                                         strike_price=pe_otm)
+                        break
+                    except:
+                        pass
                 leg = leg['Success']
                 leg = pd.DataFrame(leg)
                 buy_price_pe = float(leg['ltp'][0]) 
@@ -289,13 +287,17 @@ while True:
             pe_option['volume_check'] = (pe_option['volume'] > 1.5 * pe_option['volume_avg']).astype(int)
         
             last_row = pe_option.iloc[-1]
-            
-            leg2 = breeze.get_option_chain_quotes(stock_code="NIFTY",
+            for j in range(0, 5):
+                try:
+                    leg2 = breeze.get_option_chain_quotes(stock_code="NIFTY",
                                                         exchange_code="NFO",
                                                         product_type="options",
                                                         expiry_date=f'{expiry}T06:00:00.000Z',
                                                         right="put",
                                                         strike_price=pe_otm)
+                    break
+                except:
+                    pass
             leg2 = leg2['Success']
             leg2 = pd.DataFrame(leg2)
             leg2 = float(leg2['ltp'][0])
