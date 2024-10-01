@@ -38,7 +38,7 @@ while True:
                 try:
                     nifty_spot = breeze.get_quotes(stock_code="NIFTY",
                                                    exchange_code="NSE",
-                                                   expiry_date=f"{today}T06:00:00.000Z",
+                                                   expiry_date=f"{today}T17:00:00.000Z",
                                                    product_type="cash",
                                                    right="others",
                                                    strike_price="0")
