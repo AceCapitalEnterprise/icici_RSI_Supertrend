@@ -190,13 +190,14 @@ while True:
                                                    product_type="cash",
                                                    right="others",
                                                    strike_price="0")
+                  nifty_spot = nifty_spot['Success']
+                  nifty_spot = pd.DataFrame(nifty_spot)
+                  nifty_spot = nifty_spot['ltp'][0]
                     break
                 except:
                     pass
                   
-            nifty_spot = nifty_spot['Success']
-            nifty_spot = pd.DataFrame(nifty_spot)
-            nifty_spot = nifty_spot['ltp'][0]
+            
             
             atm = round(nifty_spot / 50) * 50
             pe_otm = atm - 100
