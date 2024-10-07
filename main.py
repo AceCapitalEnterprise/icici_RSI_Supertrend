@@ -2,7 +2,7 @@ from breeze_connect import BreezeConnect
 import urllib
 breeze = BreezeConnect(api_key="77%U3I71634^099gN232777%316Q~v4=")
 breeze.generate_session(api_secret="9331K77(I8_52JG2K73$5438q95772j@",
-                        session_token="47877275")
+                        session_token="47942370")
 
 
 import numpy as np
@@ -63,10 +63,11 @@ while True:
                                               expiry_date=f"{expiry}T07:00:00.000Z",
                                               right="call",
                                               strike_price=ce_otm)
+                    ce_option = ce_option['Success']
                     break
                 except:
                     pass
-            ce_option = ce_option['Success']
+            
             ce_option = pd.DataFrame(ce_option)
         
             ce_option.ta.rsi(close='close', length=14, append=True)
@@ -95,10 +96,11 @@ while True:
                                                         expiry_date=f'{expiry}T06:00:00.000Z',
                                                         right="call",
                                                         strike_price=ce_otm)
+                        leg = leg['Success']
                         break
                     except:
                         pass
-                leg = leg['Success']
+                
                 leg = pd.DataFrame(leg)
                 buy_price = float(leg['ltp'][0]) 
                 SL = buy_price - atr
